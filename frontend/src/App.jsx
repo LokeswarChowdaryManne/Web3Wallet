@@ -1,4 +1,3 @@
-// src/App.jsx
 import { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
 import './App.css';
@@ -11,7 +10,7 @@ function App() {
   const [usdBalance, setUsdBalance] = useState('0.00');
   const [recipient, setRecipient] = useState('');
   const [amount, setAmount] = useState('');
-  const [amountType, setAmountType] = useState('ETH'); // 'ETH' or 'USD'
+  const [amountType, setAmountType] = useState('ETH');
   const [transactions, setTransactions] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
@@ -19,7 +18,6 @@ function App() {
   const [view, setView] = useState('create'); 
   const [mnemonicInput, setMnemonicInput] = useState('');
 
-  // --- Utility Functions ---
   const truncateAddress = (address) => {
     if (!address) return '';
     return `${address.slice(0, 6)}...${address.slice(-4)}`;
@@ -32,7 +30,6 @@ function App() {
     }
   };
 
-  // --- API Functions ---
   const fetchWalletData = async (address) => {
     setError('');
     try {
@@ -52,7 +49,6 @@ function App() {
     }
   };
 
-  // --- Wallet Management ---
   const createWallet = () => {
     const newWallet = ethers.Wallet.createRandom();
     localStorage.setItem('mnemonic', newWallet.mnemonic.phrase);
@@ -86,7 +82,7 @@ function App() {
         fetchWalletData(loadedWallet.address);
       } catch (e) {
         console.error("Failed to load wallet from saved mnemonic:", e);
-        localStorage.removeItem('mnemonic'); // Clear corrupted mnemonic
+        localStorage.removeItem('mnemonic');
       }
     }
   }, []);
@@ -157,7 +153,6 @@ function App() {
     }
   };
 
-  // --- Render Logic ---
   if (!wallet) {
     return (
       <div className="wallet-container create-wallet-view">
