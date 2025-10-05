@@ -1,0 +1,214 @@
+/* src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --background-dark: #0A0A0A;
+  --card-dark: #1A1A1A;
+  --primary-glow: #00FFD1;
+  --text-primary: #EAEAEA;
+  --text-secondary: #888888;
+  --green: #00FF7F;
+  --red: #FF4136;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-dark);
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.wallet-container {
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--card-dark);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid #2a2a2a;
+}
+
+.wallet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.wallet-header h1 {
+  font-size: 24px;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.wallet-address {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: var(--text-secondary);
+  background-color: #252525;
+  padding: 6px 10px;
+  border-radius: 12px;
+}
+
+.wallet-address button {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  margin-left: 8px;
+  padding: 0;
+}
+
+.balance-card {
+  background: rgba(38, 38, 38, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  margin-bottom: 24px;
+  border: 1px solid #333;
+}
+
+.balance-eth {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--primary-glow);
+}
+
+.balance-usd {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin: 4px 0 0 0;
+}
+
+.action-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.btn {
+  background-color: transparent;
+  border: 1px solid var(--primary-glow);
+  color: var(--primary-glow);
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: var(--primary-glow);
+  color: var(--background-dark);
+  box-shadow: 0 0 15px rgba(0, 255, 209, 0.5);
+}
+
+.send-form h2, .transaction-history h2 {
+  font-size: 18px;
+  margin-bottom: 16px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.input-group {
+  margin-bottom: 16px;
+}
+
+.input-group input {
+  width: 100%;
+  background-color: #252525;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 14px;
+  color: var(--text-primary);
+  font-size: 16px;
+  box-sizing: border-box; /* Important for padding */
+}
+
+.amount-input-wrapper {
+  position: relative;
+}
+
+.amount-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  background-color: #333;
+  border-radius: 8px;
+}
+
+.amount-toggle button {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.amount-toggle button.active {
+  background-color: var(--primary-glow);
+  color: var(--background-dark);
+  border-radius: 8px;
+}
+
+.transaction-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #2a2a2a;
+}
+.transaction-item:last-child {
+  border-bottom: none;
+}
+
+.transaction-details {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.transaction-details span {
+  font-family: monospace;
+}
+
+.transaction-arrow {
+  font-size: 20px;
+}
+
+.transaction-amount.sent {
+  color: var(--red);
+}
+
+.transaction-amount.received {
+  color: var(--green);
+}
+
+.create-wallet-view {
+    text-align: center;
+}
+.create-wallet-view button {
+    margin-top: 20px;
+}
