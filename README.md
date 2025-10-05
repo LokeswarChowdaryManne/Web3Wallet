@@ -194,9 +194,9 @@ The app sends real email notifications for successful transfers using SMTP. Conf
 Web3Wallet/
 ├──.env               # Environment variables
 ├── backend/
-│   └── venv/
-│       ├── app.py              # Flask backend server
-│       └── requirements.txt    # Python dependencies
+│   ├── venv/
+│   ├── app.py              # Flask backend server
+│   └── requirements.txt    # Python dependencies
 │   
 ├── frontend/
 │   ├── src/
